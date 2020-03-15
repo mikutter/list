@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 Plugin.create :list do
+  UserConfig[:retrieve_interval_list_timeline] ||= 60
   defevent :list_created, priority: :routine_passive, prototype: [Diva::Model, Array]
   defevent :list_destroy, priority: :routine_passive, prototype: [Diva::Model, Array]
 
